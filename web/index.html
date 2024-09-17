@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prova CRUD</title>
+  </head>
+  <body>
+    <h1>Consumindo API de Viagem</h1>
+    <div>
+      <h2>Criar/Atualizar Viagem</h2>
+      <form id="ViagemForm">
+        <div class="form-group">
+          <label for="id">ID (para atualizar):</label>
+          <input type="text" id="id" placeholder="ID da Viagem" />
+        </div>
+        <div class="form-group">
+          <label for="viagemNome">Nome:</label>
+          <input
+            type="text"
+            id="viagemNome"
+            placeholder="Nome para Viagem"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="viagemDataSaida">Data Saida:</label>
+          <input
+            type="date"
+            id="viagemDataSaida"
+            placeholder="Data de Saida"
+            required
+          />
+        </div>
+        <div class="form-group">
+            <label for="viagemDataChegada">Idate:</label>
+            <input
+              type="date"
+              id="viagemDataChegada"
+              placeholder="Data de Chegada"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="viagemValor">Valor:</label>
+            <input
+              type="number"
+              id="viagemValor"
+              placeholder="Valor da viagem"
+              required
+            />
+          </div>
+        <button type="submit">Salvar Viagem</button>
+      </form>
+    </div>
+
+    <div>
+      <h2>Buscar Viagem por ID</h2>
+      <input type="text" id="buscaIdViagem" placeholder="ID da viagem" />
+      <button onclick="findByIdViagem()">Buscar</button>
+    </div>
+
+    <div>
+      <h2>Listar Todos as Viagems</h2>
+      <button onclick="findAllViagems()">Listar viagems</button>
+    </div>
+
+    <div>
+      <h2>Remover Viagem</h2>
+      <input type="text" id="removeViagemId" placeholder="ID da viagem" />
+      <button onclick="removeViagem()">Remover</button>
+    </div>
+
+    <h3>Resultados:</h3>
+    <pre id="results"></pre>
+
+    <script src="script.js"></script>
+  </body>
+</html>
