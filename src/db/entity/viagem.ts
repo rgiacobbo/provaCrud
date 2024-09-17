@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { DestinoEntity } from './destino';
 
 @Entity()
 export class ViagemEntity {
@@ -16,4 +17,7 @@ export class ViagemEntity {
 
   @Column()
   valor: number;
+
+  @OneToMany(() => DestinoEntity, destino => destino.viagem)
+  destinos: DestinoEntity[];
 }

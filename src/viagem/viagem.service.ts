@@ -12,11 +12,19 @@ export class ViagemService {
     private viagemRepository: Repository<ViagemEntity>,
   ) {}
 
-  findAll(): Promise<ViagemEntity[]> {
-    return this.viagemRepository.find();
+  async findAll(): Promise<ViagemEntity[]> {
+    const viagem = await this.viagemRepository.find();
+    for (const n of viagem) {
+      console.log(n.destinos)
+    }
+
+    return viagem;
   }
 
+  
+
   async create(viagemDto: ViagemDto) {
+    console.log(viagemDto)
     const viagem = await this.viagemRepository.save(viagemDto);
     return viagem;
   }

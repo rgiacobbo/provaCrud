@@ -11,6 +11,10 @@ export class DestinoService {
         private destinoRepository: Repository<DestinoEntity>,
       ) {}
 
+      findAll(): Promise<DestinoEntity[]> {
+        return this.destinoRepository.find();
+      }
+
       async create(destinoDto: DestinoDto) {
         const viagem = await this.destinoRepository.save(destinoDto);
         return viagem;
